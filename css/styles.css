@@ -11,10 +11,14 @@
   --white-text-color: #ffffff;
   --transparent-white-color: rgba(255, 255, 255, 0.6);
   --black-text-color: #000000;
-  --hero-color: #2f303a;
+  --footer-color: #2f303a;
   --color-section-command: #f5f4fa;
   --border-header: #ececec;
   --border-color-portfolio: #f5f4fa;
+  --hero-background-color: rgba(47, 48, 58, 0.4);
+  --background-color-icon-advantage: #f5f4fa;
+  --color-icon-command: #afb1b8;
+  --footer-background-icon: rgba(255, 255, 255, 10%);
 }
 /* html {
   box-sizing: border-box;
@@ -26,7 +30,7 @@
 } */
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--white-text-color);
   color: var(--primary-text-color);
   font-size: 14px;
@@ -117,7 +121,7 @@ img {
 }
 
 .header-text {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -169,6 +173,9 @@ img {
 
 .list-link,
 .link-item {
+  display: flex;
+  align-items: center;
+
   font-style: normal;
   font-weight: 500;
   line-height: 1.14;
@@ -187,13 +194,29 @@ img {
   color: var(--acent-color);
 }
 
+.header-block-icon {
+  box-sizing: border-box;
+  fill: currentColor;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
 /* ------------Main hero ------------------*/
 
 .section-hero {
+  max-width: 1600px;
+  min-height: 600px;
   padding-top: 200px;
   padding-bottom: 200px;
-
-  background-color: var(--hero-color);
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/Img.jpg);
+  background-repeat: no-repeat;
 }
 
 .main-title {
@@ -239,7 +262,7 @@ img {
   background-color: var(--white-text-color);
 }
 
-/* -------------Section Перевагт------------- */
+/* -------------Section Переваги------------- */
 
 .container-item {
   display: flex;
@@ -247,6 +270,48 @@ img {
 
 .item-lists:not(:last-child) {
   margin-right: 30px;
+}
+.item-lists:not(:last-child) {
+  margin-right: 30px;
+}
+
+.item-lists::before {
+  display: block;
+  content: "";
+  margin-bottom: 30px;
+  padding: 25px 100px;
+
+  width: 270px;
+  height: 120px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background: var(--background-color-icon-advantage);
+  border-radius: 4px;
+}
+
+.item-lists:nth-child(1)::before {
+  background-image: url(../images/antenna\ 1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-lists:nth-child(2)::before {
+  background-image: url(../images/clock.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-lists:nth-child(3)::before {
+  background-image: url(../images/diagram.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-lists:nth-child(4)::before {
+  background-image: url(../images/astronaut.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .container-subtitle {
@@ -341,15 +406,93 @@ img {
   color: var(--title-text-color);
 }
 
+.command-social {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.command-soc-list {
+  height: 44px;
+  width: 44px;
+}
+
+.command-soc-link:hover,
+.command-soc-link:focus {
+  background-color: var(--acent-color);
+  color: var(--white-text-color);
+}
+
+.command-soc-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+
+  fill: var(--color-icon-command);
+}
+
+.icon-command:hover,
+.icon-command:focus {
+  fill: var(--white-text-color);
+}
+
+/* -----------------------section client------------------ */
+
+.client-titlle {
+  display: block;
+  margin-bottom: 50px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.client-item {
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.client-list {
+  width: 170px;
+  height: 92px;
+  align-items: center;
+}
+
+.client-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.icon-command {
+  fill: var(--color-icon-command);
+}
 /* ------------------------------FOOTER---------------------------------- */
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  background: var(--hero-color);
+  background: var(--footer-color);
+}
+
+.footer-container {
+  display: flex;
 }
 
 .footer-link {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
@@ -395,6 +538,57 @@ img {
   color: var(--acent-color);
 }
 
+/* ------------------------------FOOTER 2--------------------------- */
+
+.footer-block-wrap {
+  display: block;
+  margin-left: 70px;
+}
+
+.footer-block-title {
+  margin-bottom: 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+
+  color: var(--white-text-color);
+}
+
+.footer-item-icon {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  list-style: none;
+}
+
+.footer-block-list {
+  display: flex;
+  width: 44px;
+  height: 44px;
+}
+
+.footer-block-link:hover {
+  background-color: var(--acent-color);
+}
+
+.footer-block-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--footer-background-icon);
+}
+
+.footer-block-icon {
+  fill: var(--white-text-color);
+}
+
 /* ------------------------------P O R T F O L I O ------------------*/
 
 /* ------------------------------header---------------------------- */
@@ -412,7 +606,7 @@ img {
 .content-link {
   padding: 6px 24px 6px 24px;
 
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -443,6 +637,12 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+
+.portfolio-box:hover,
+.portfolio-box:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .inner-title {
