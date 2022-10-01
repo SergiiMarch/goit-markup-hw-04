@@ -494,14 +494,13 @@ img {
 
 /* ------------------------------FOOTER---------------------------------- */
 .footer {
-  display: flex;
   padding-top: 60px;
   padding-bottom: 60px;
   background: var(--footer-color);
 }
 
 .footer-container {
-  display: block;
+  display: flex;
 }
 
 .footer-link {
