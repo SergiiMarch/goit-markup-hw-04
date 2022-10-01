@@ -419,7 +419,7 @@ img {
 .command-soc-link:hover,
 .command-soc-link:focus {
   background-color: var(--acent-color);
-  color: var(--white-text-color);
+  /* color: var(--white-text-color); */
 }
 
 .command-soc-link {
@@ -466,20 +466,32 @@ img {
   align-items: center;
 }
 
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--acent-color);
+}
+
 .client-link {
   display: flex;
   width: 170px;
   height: 92px;
   justify-content: center;
   align-items: center;
-  border: 1px solid #afb1b8;
+  border: 1px solid var(--color-icon-command);
   border-radius: 4px;
   box-sizing: border-box;
+  color: var(--color-icon-command);
 }
 
-.icon-command {
-  fill: var(--color-icon-command);
+.icon-client {
+  width: 100%;
+  fill: currentColor;
 }
+
+.icon-client:hover {
+  fill: var(--acent-color);
+}
+
 /* ------------------------------FOOTER---------------------------------- */
 .footer {
   padding-top: 60px;
